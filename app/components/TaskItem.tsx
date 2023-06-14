@@ -1,10 +1,10 @@
 import React from 'react';
 import Realm from 'realm';
-import {View, Text, Pressable, StyleSheet} from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-import {shadows} from '../styles/shadows';
+import { shadows } from '../styles/shadows';
 import colors from '../styles/colors';
-import {Task} from '../models/Task';
+import { Task } from '../models/Task';
 
 type TaskItemProps = {
   task: Task & Realm.Object;
@@ -13,7 +13,7 @@ type TaskItemProps = {
 };
 
 export const TaskItem = React.memo<TaskItemProps>(
-  ({task, onToggleStatus, onDelete}) => {
+  ({ task, onToggleStatus, onDelete }) => {
     return (
       <View style={styles.task}>
         <Pressable

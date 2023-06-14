@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
-import {Realm} from '@realm/react';
+import { View, FlatList, StyleSheet } from 'react-native';
+import { Realm } from '@realm/react';
 
-import {Task} from '../models/Task';
-import {TaskItem} from './TaskItem';
+import { Task } from '../models/Task';
+import { TaskItem } from './TaskItem';
 
 type TaskListProps = {
   tasks: Realm.Results<Task & Realm.Object>;
@@ -21,12 +21,12 @@ export const TaskList: React.FC<TaskListProps> = ({
       <FlatList
         data={tasks}
         keyExtractor={task => task._id.toString()}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <TaskItem
             task={item}
             onToggleStatus={() => onToggleTaskStatus(item)}
             onDelete={() => onDeleteTask(item)}
-            // Don't spread the Realm item as such: {...item}
+          // Don't spread the Realm item as such: {...item}
           />
         )}
       />

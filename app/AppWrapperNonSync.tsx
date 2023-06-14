@@ -1,18 +1,19 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import 'react-native-gesture-handler';
 
-import {TaskRealmContext} from './models';
+import { ListRealmContext } from './models';
 import colors from './styles/colors';
-import {AppNonSync} from './AppNonSync';
+import { AppNonSync } from './AppNonSync';
+import { Routes } from './routes';
 
 export const AppWrapperNonSync = () => {
-  const {RealmProvider} = TaskRealmContext;
+  const { RealmProvider } = ListRealmContext;
 
-  // If sync is disabled, setup the app without any sync functionality and return early
   return (
     <SafeAreaView style={styles.screen}>
       <RealmProvider>
-        <AppNonSync />
+        <Routes />
       </RealmProvider>
     </SafeAreaView>
   );
