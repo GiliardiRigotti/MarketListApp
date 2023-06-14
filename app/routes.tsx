@@ -14,7 +14,7 @@ export function Routes() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="ManageList" component={ManageLists} />
+                <Stack.Screen name="ManageLists" component={ManageLists} />
                 <Stack.Screen name="CreateList" component={CreateList} />
                 <Stack.Screen name="List" component={List} />
                 <Stack.Screen name="AddItemList" component={AddItemList} />

@@ -2,7 +2,7 @@ import { styled } from "styled-components/native";
 import { color } from "../../constants/colors";
 
 export const Card = styled.View`
-    width: 100%;
+    width: 80%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
