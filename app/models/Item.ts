@@ -5,11 +5,11 @@ export class Item extends Realm.Object<Item> {
   name!: string;
   inCart: boolean = false;
   createdAt: Date = new Date();
-  listId!: string;
+  listId!: Realm.BSON.ObjectId;
 
   static primaryKey = '_id';
 
-  constructor(realm: Realm, name: string, listId?: string) {
+  constructor(realm: Realm, name: string, listId?: Realm.BSON.ObjectId) {
     super(realm, { name, listId });
   }
 }

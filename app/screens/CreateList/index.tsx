@@ -22,6 +22,7 @@ export default function CreateList() {
         realm.write(() => {
             return new List(realm, title);
         });
+        setTitle("")
         navigate("ManageLists")
     }
 
