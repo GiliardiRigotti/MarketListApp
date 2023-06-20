@@ -2,29 +2,34 @@ import { Image } from "react-native";
 import { Button, ButtonText, Container, Label } from "./styled";
 import { images } from "../../assets";
 import { useNavigation } from "@react-navigation/native";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ListRealmContext } from "../../models";
 import { List } from "../../models/List";
 
-const { useQuery, useRealm } = ListRealmContext;
 export default function Home() {
     const { navigate } = useNavigation()
-    const result = useQuery(List);
+    const [lists, setLists] = useState(null)
 
-    const lists = useMemo(() => result.sorted('createdAt'), [result]);
 
     function handleNavigation() {
         navigate('CreateList')
     }
 
+    const { useQuery } = ListRealmContext;
+    const result = useQuery(List);
+
     useEffect(() => {
         function verifyExistList() {
-            if (lists.length > 0) {
+            if (result.length > 0) {
+                setLists(result)
                 navigate("ManageLists")
             }
         }
-        verifyExistList()
-    }, [])
+        if (lists == null) {
+            verifyExistList()
+        }
+        return () => { }
+    }, [lists])
 
     return (
         <Container>

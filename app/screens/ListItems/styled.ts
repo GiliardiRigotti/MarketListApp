@@ -41,3 +41,16 @@ export const ButtonText = styled.Text`
     font-weight: bold;
     color: ${color.black};
 `
+
+export const Navbar = styled.View`
+    width: 80%;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+`
+
+export const Title = styled.Text`
+    color: ${color.yellow};
+    font-size: 14px;
+`

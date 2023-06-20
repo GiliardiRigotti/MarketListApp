@@ -41,7 +41,7 @@ export default function ManageLists() {
 
     return (
         <>
-            <Header title="Listas" />
+            <Header title="Minhas Listas" goBack={false} />
             <Container>
                 {
                     lists.map((item, index) =>

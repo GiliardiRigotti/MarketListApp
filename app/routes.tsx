@@ -8,17 +8,11 @@ import AddItemList from './screens/AddItemList';
 import ListItems from './screens/ListItems';
 import { List } from './models/List';
 import { Realm } from '@realm/react';
+import EditItemList from './screens/EditItemList';
 
-type RootStackParamList = {
-    Home: undefined
-    ListItems: { list: List & Realm.Object }
-    AddItem: { list: List & Realm.Object }
-    ManageLists: undefined
-    CreateList: undefined
 
-}
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator();
 
 export function Routes() {
     return (
@@ -29,6 +23,7 @@ export function Routes() {
                 <Stack.Screen name="CreateList" component={CreateList} />
                 <Stack.Screen name="ListItems" component={ListItems} />
                 <Stack.Screen name="AddItem" component={AddItemList} />
+                <Stack.Screen name="EditItem" component={EditItemList} />
             </Stack.Navigator>
         </NavigationContainer>
 

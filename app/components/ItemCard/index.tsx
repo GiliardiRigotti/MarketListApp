@@ -7,17 +7,26 @@ import { Item } from "../../models/Item";
 
 interface itemProps {
     item: Item & Realm.Object;
-    onDelete: (item: Item & Realm.Object) => void;
+    onEdit: (item: Item & Realm.Object) => void;
+    onCheck: (item: Item & Realm.Object) => void;
 };
 
-export function ItemCard({ item, onDelete }: itemProps) {
+export function ItemCard({ item, onCheck, onEdit }: itemProps) {
     return (
         <Card>
+            <Pressable onPress={() => onCheck(item)}>
+                {
+                    item.inCart ?
+                        <Icon name="checkbox-marked" size={20} color={color.yellow} />
+                        :
+                        <Icon name="checkbox-blank-outline" size={20} color={color.gray} />
+                }
+            </Pressable>
             <Label>
                 {item.name}
             </Label>
-            <Pressable onPress={() => onDelete(item)}>
-                <Icon name="trash-can-outline" size={20} color={color.yellow} />
+            <Pressable onPress={() => onEdit(item)}>
+                <Icon name="pencil" size={20} color={color.yellow} />
             </Pressable>
 
         </Card>

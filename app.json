@@ -8,6 +8,11 @@
     ],
     "android": {
       "package": "com.howvi.marketlistapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "79aeb6e4-ff47-4c82-90e6-a121e3083132"
+      }
     }
   }
 }
