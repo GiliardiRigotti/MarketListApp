@@ -56,7 +56,7 @@ export default function ListItems({ route, navigation }) {
                         Adicionar item
                     </Title>
                     <TouchableOpacity onPress={handleAddItemList}>
-                        <Icon name="plus-box" size={20} color={color.yellow} />
+                        <Icon name="plus-box" size={30} color={color.yellow} />
                     </TouchableOpacity>
                 </Navbar>
                 {

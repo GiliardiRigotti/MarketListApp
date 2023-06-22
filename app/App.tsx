@@ -4,10 +4,9 @@ import 'react-native-gesture-handler';
 
 import { ListRealmContext } from './models';
 import colors from './styles/colors';
-import { AppNonSync } from './AppNonSync';
 import { Routes } from './routes';
 
-export const AppWrapperNonSync = () => {
+export const App = () => {
   const { RealmProvider } = ListRealmContext;
 
   return (

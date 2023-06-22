@@ -3,10 +3,9 @@ import 'react-native-get-random-values';
 import 'react-native-gesture-handler';
 import React from 'react';
 import { registerRootComponent } from 'expo'
-import { AppWrapperNonSync } from './app/AppWrapperNonSync';
+import { App } from './app/App';
 
-const App = () => (
-  <AppWrapperNonSync />
-);
 
-registerRootComponent(App);
+registerRootComponent(() => (
+  <App />
+));

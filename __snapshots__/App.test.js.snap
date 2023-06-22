@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "#2A3642",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNCSafeAreaProvider
+      onInsetsChange={[Function]}
+      style={
+        [
+          {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": "rgb(242, 242, 242)",
+              "flex": 1,
+            },
+            undefined,
+          ]
+        }
+      >
+        <RNSScreenContainer
+          onLayout={[Function]}
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <RNSScreen
+            activityState={2}
+            collapsable={false}
+            forwardedRef={[Function]}
+            gestureResponseDistance={
+              {
+                "bottom": -1,
+                "end": -1,
+                "start": -1,
+                "top": -1,
+              }
+            }
+            pointerEvents="box-none"
+            style={
+              {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "opacity": 1,
+                }
+              }
+            />
+            <View
+              accessibilityElementsHidden={false}
+              closing={false}
+              gestureVelocityImpact={0.3}
+              importantForAccessibility="auto"
+              onClose={[Function]}
+              onGestureBegin={[Function]}
+              onGestureCanceled={[Function]}
+              onGestureEnd={[Function]}
+              onOpen={[Function]}
+              onTransition={[Function]}
+              pointerEvents="box-none"
+              style={
+                [
+                  {
+                    "display": "flex",
+                    "overflow": undefined,
+                  },
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                ]
+              }
+              transitionSpec={
+                {
+                  "close": {
+                    "animation": "spring",
+                    "config": {
+                      "damping": 500,
+                      "mass": 3,
+                      "overshootClamping": true,
+                      "restDisplacementThreshold": 10,
+                      "restSpeedThreshold": 10,
+                      "stiffness": 1000,
+                    },
+                  },
+                  "open": {
+                    "animation": "spring",
+                    "config": {
+                      "damping": 500,
+                      "mass": 3,
+                      "overshootClamping": true,
+                      "restDisplacementThreshold": 10,
+                      "restSpeedThreshold": 10,
+                      "stiffness": 1000,
+                    },
+                  },
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                pointerEvents="box-none"
+                style={
+                  {
+                    "flex": 1,
+                    "marginTop": 0,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  forwardedRef={[Function]}
+                  handlerTag={2}
+                  handlerType="PanGestureHandler"
+                  needsOffscreenAlphaCompositing={false}
+                  onGestureHandlerEvent={[Function]}
+                  onGestureHandlerStateChange={[Function]}
+                  style={
+                    {
+                      "flex": 1,
+                      "transform": [
+                        {
+                          "translateX": 0,
+                        },
+                        {
+                          "translateX": 0,
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <View
+                    pointerEvents="box-none"
+                    style={
+                      [
+                        {
+                          "flex": 1,
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "backgroundColor": "rgb(242, 242, 242)",
+                          },
+                          undefined,
+                        ],
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "flex": 1,
+                          "flexDirection": "column-reverse",
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          {
+                            "flex": 1,
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            {
+                              "alignItems": "center",
+                              "backgroundColor": "#222222",
+                              "flexBasis": 0,
+                              "flexGrow": 1,
+                              "flexShrink": 1,
+                              "justifyContent": "center",
+                            }
+                          }
+                        >
+                          <Image
+                            source={1}
+                            style={
+                              {
+                                "height": 300,
+                                "marginBottom": 30,
+                                "resizeMode": "center",
+                                "width": 200,
+                              }
+                            }
+                          />
+                          <Text
+                            style={
+                              {
+                                "color": "#FFFF",
+                                "fontSize": 20,
+                                "textAlign": "justify",
+                              }
+                            }
+                          >
+                            Comece sua primeira lista de compras
+                          </Text>
+                          <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              {
+                                "alignItems": "center",
+                                "backgroundColor": "#FFEF5A",
+                                "borderBottomLeftRadius": 8,
+                                "borderBottomRightRadius": 8,
+                                "borderTopLeftRadius": 8,
+                                "borderTopRightRadius": 8,
+                                "height": 50,
+                                "justifyContent": "center",
+                                "marginTop": 30,
+                                "opacity": 1,
+                                "width": "60%",
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                {
+                                  "color": "#222222",
+                                  "fontSize": 25,
+                                  "fontWeight": "bold",
+                                  "textTransform": "uppercase",
+                                }
+                              }
+                            >
+                              Vamos lá
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </RNSScreen>
+        </RNSScreenContainer>
+        <View
+          collapsable={false}
+          pointerEvents="box-none"
+          style={
+            {
+              "height": 44,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "zIndex": 1,
+            }
+          }
+        />
+      </View>
+    </RNCSafeAreaProvider>
+  </View>
+</RCTSafeAreaView>
+`;
