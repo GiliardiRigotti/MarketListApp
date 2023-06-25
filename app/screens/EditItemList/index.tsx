@@ -7,16 +7,17 @@ import { Item } from "../../models/Item";
 import { Realm } from "@realm/react";
 import { TouchableOpacity } from "react-native";
 
-export default function EditItemList({ route }) {
+//Tela de edição do item da lista
+export default function EditItemList({ navigation, route }) {
     const item = route.params.item as Item & Realm.Object
     const { useRealm } = ListRealmContext;
-    const navigation = useNavigation()
     const [name, setName] = useState(item.name);
     const [modal, setModal] = useState<boolean>(false)
 
     const realm = useRealm();
 
-    const handleAddItem = () => {
+    //Altera o nome do item e volta na lista dos items
+    const handleEditItem = () => {
         if (!name) {
             return;
         }
@@ -27,6 +28,7 @@ export default function EditItemList({ route }) {
         navigation.goBack()
     }
 
+    //Deleta o item do banco de dados e volta na tela dos items
     const deleteItem = useCallback(
         (): void => {
             realm.write(() => {
@@ -37,6 +39,7 @@ export default function EditItemList({ route }) {
         [realm],
     );
 
+    //Faz a ação de abrir o modal que confirma se quer excluir mesmo o objeto
     const handleDeleteItem = (): void => {
         setModal(true)
     }
@@ -50,18 +53,18 @@ export default function EditItemList({ route }) {
                     <InputLabel>Editar item</InputLabel>
                     <Input placeholder='Nome do item' onChangeText={value => setName(value)} value={name} />
                 </InputContainer>
-                <Button onPress={handleAddItem}>
+                <Button onPress={handleEditItem}>
                     <ButtonText>
                         Salvar
                     </ButtonText>
                 </Button>
                 <TouchableOpacity onPress={handleDeleteItem}>
                     <DeleteText>
-                        Excuir item
+                        Excluir item
                     </DeleteText>
                 </TouchableOpacity>
             </Container>
-            {
+            {//Modal que se abre para fazer a confirmação da exclusão do item
                 modal &&
                 <AlertContainer>
                     <ButtonDelete onPress={deleteItem}>

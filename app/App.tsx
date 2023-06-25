@@ -3,11 +3,9 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
 
 import { ListRealmContext } from './models';
-import colors from './styles/colors';
-import { AppNonSync } from './AppNonSync';
 import { Routes } from './routes';
 
-export const AppWrapperNonSync = () => {
+export const App = () => {
   const { RealmProvider } = ListRealmContext;
 
   return (
@@ -22,6 +20,5 @@ export const AppWrapperNonSync = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.darkBlue,
   },
 });

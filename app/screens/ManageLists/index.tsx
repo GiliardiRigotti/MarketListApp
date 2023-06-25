@@ -4,19 +4,19 @@ import { List } from "../../models/List";
 import Header from "../../components/Header";
 import { Button, ButtonText, Card, Container, Line } from "./styled";
 import { ListCard } from "../../components/ListCard";
-import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native";
 
-
-export default function ManageLists() {
+//Tela de gerenciamento das listas
+export default function ManageLists({ navigation }) {
     const { useQuery, useRealm } = ListRealmContext;
     const realm = useRealm();
     const result = useQuery(List);
-    const { navigate } = useNavigation()
 
+    //Verifica se houve a alteração na listas, caso não houver, não deixa a tela se carregar novamente para evitar baixa performace do dispositivo
     const lists = useMemo(() => result.sorted('createdAt'), [result]);
 
-
-    const handleDeleteTask = useCallback(
+    //Deleta a lista
+    const handleDeleteList = useCallback(
         (list: List & Realm.Object): void => {
             realm.write(() => {
                 realm.delete(list);
@@ -25,14 +25,16 @@ export default function ManageLists() {
         [realm],
     );
 
+    //Leva a tela para adicionar lista 
     const handleNavigationCreateList = () => {
-        navigate("CreateList")
+        navigation.navigate("CreateList")
     }
 
+    //Verificação se a lista esta vazia, caso esteja ele ja redireciona para a tela de criar lista
     useEffect(() => {
         function checkListLength() {
             if (lists.length == 0) {
-                navigate("CreateList")
+                navigation.navigate("CreateList")
             }
         }
         checkListLength()
@@ -43,17 +45,21 @@ export default function ManageLists() {
         <>
             <Header title="Minhas Listas" goBack={false} />
             <Container>
-                {
-                    lists.map((item, index) =>
-                        <Card key={index}>
-                            <ListCard key={index} list={item} onDelete={handleDeleteTask} />
-                            {
-                                index + 1 < lists.length &&
-                                <Line />
-                            }
-                        </Card>
-                    )
-                }
+                <ScrollView
+                    style={{ width: "100%" }}
+                >
+                    {//Exibe todas as listas criadas
+                        lists.map((item, index) =>
+                            <Card key={index}>
+                                <ListCard list={item} onDelete={handleDeleteList} />
+                                {
+                                    index + 1 < lists.length &&
+                                    <Line />
+                                }
+                            </Card>
+                        )
+                    }
+                </ScrollView>
                 <Button onPress={handleNavigationCreateList}>
                     <ButtonText>
                         Criar Lista

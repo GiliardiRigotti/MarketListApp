@@ -1,18 +1,16 @@
 import { Image } from "react-native";
 import { Button, ButtonText, Container, Label } from "./styled";
 import { images } from "../../assets";
-import { useNavigation } from "@react-navigation/native";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ListRealmContext } from "../../models";
 import { List } from "../../models/List";
 
-export default function Home() {
-    const { navigate } = useNavigation()
+export default function Home({ navigation }) {
     const [lists, setLists] = useState(null)
 
 
     function handleNavigation() {
-        navigate('CreateList')
+        navigation.navigate('CreateList')
     }
 
     const { useQuery } = ListRealmContext;
@@ -22,7 +20,7 @@ export default function Home() {
         function verifyExistList() {
             if (result.length > 0) {
                 setLists(result)
-                navigate("ManageLists")
+                navigation.navigate("ManageLists")
             }
         }
         if (lists == null) {

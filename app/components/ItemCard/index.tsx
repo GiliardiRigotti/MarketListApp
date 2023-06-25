@@ -17,18 +17,17 @@ export function ItemCard({ item, onCheck, onEdit }: itemProps) {
             <Pressable onPress={() => onCheck(item)}>
                 {
                     item.inCart ?
-                        <Icon name="checkbox-marked" size={20} color={color.yellow} />
+                        <Icon name="checkbox-marked" size={25} color={color.yellow} />
                         :
-                        <Icon name="checkbox-blank-outline" size={20} color={color.gray} />
+                        <Icon name="checkbox-blank-outline" size={25} color={color.gray} />
                 }
             </Pressable>
             <Label>
                 {item.name}
             </Label>
             <Pressable onPress={() => onEdit(item)}>
-                <Icon name="pencil" size={20} color={color.yellow} />
+                <Icon name="pencil" size={25} color={color.yellow} />
             </Pressable>
-
         </Card>
     )
 }

@@ -6,8 +6,6 @@ import ManageLists from './screens/ManageLists';
 import CreateList from './screens/CreateList';
 import AddItemList from './screens/AddItemList';
 import ListItems from './screens/ListItems';
-import { List } from './models/List';
-import { Realm } from '@realm/react';
 import EditItemList from './screens/EditItemList';
 
 
@@ -15,6 +13,7 @@ import EditItemList from './screens/EditItemList';
 const Stack = createStackNavigator();
 
 export function Routes() {
+    //Rotas das paginas usando a biblioteca React-Navigation
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>

@@ -1,5 +1,6 @@
 import { Realm } from '@realm/react';
 
+//Schema da Lista
 export class List extends Realm.Object<List> {
   _id: Realm.BSON.ObjectId = new Realm.BSON.ObjectId();
   title!: string;

@@ -1,20 +1,17 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 
-import { TaskRealmContext, ListRealmContext } from '../../models';
+import { ListRealmContext } from '../../models';
 import Header from "../../components/Header";
 import { Button, ButtonText, Container, Input, InputContainer, InputLabel } from "./styled";
 import { List } from '../../models/List';
-import { color } from '../../constants/colors';
-import { useNavigation } from '@react-navigation/native';
-import { TextInput } from 'react-native';
 
-export default function CreateList() {
+//Tela de criação de lista
+export default function CreateList({ navigation }) {
     const { useRealm } = ListRealmContext;
-    const { navigate } = useNavigation()
     const [title, setTitle] = useState("");
-
     const realm = useRealm();
 
+    //Adiciona a lista no banco de dados e redireciona para a tela da listagem das listas
     const handleCreateList = () => {
         if (!title) {
             return;
@@ -23,7 +20,7 @@ export default function CreateList() {
             return new List(realm, title);
         });
         setTitle("")
-        navigate("ManageLists")
+        navigation.navigate("ManageLists")
     }
 
 

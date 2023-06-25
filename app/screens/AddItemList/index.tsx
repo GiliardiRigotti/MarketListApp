@@ -7,11 +7,9 @@ import { Item } from "../../models/Item";
 import { List } from "../../models/List";
 import { Realm } from "@realm/react";
 
-export default function AddItemList() {
-    const route = useRoute()
+export default function AddItemList({ navigation, route }) {
     const list = route.params.list as List & Realm.Object
     const { useRealm } = ListRealmContext;
-    const { navigate } = useNavigation()
     const [name, setName] = useState("");
 
     const realm = useRealm();
@@ -24,16 +22,16 @@ export default function AddItemList() {
             return new Item(realm, name, list._id);
         });
         setName("")
-        navigate("ListItems", { list })
+        navigation.navigate("ListItems", { list })
     }
 
 
     return (
         <>
-            <Header title="Criar Lista" />
+            <Header title="Adicionar item" />
             <Container>
                 <InputContainer>
-                    <InputLabel>Adicionar item</InputLabel>
+                    <InputLabel>Nome do item</InputLabel>
                     <Input placeholder='Nome do item' onChangeText={value => setName(value)} value={name} />
                 </InputContainer>
                 <Button onPress={handleAddItem}>
