@@ -3,6 +3,13 @@
     "name": "MarketListApp",
     "slug": "MarketListApp",
     "version": "1.0.0",
+    "icon":"./assets/adaptive-icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#25292e"
+    },
+    "plugins": ["@config-plugins/detox"],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -13,6 +20,9 @@
       "eas": {
         "projectId": "79aeb6e4-ff47-4c82-90e6-a121e3083132"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.howvi.marketlistapp"
     }
   }
 }

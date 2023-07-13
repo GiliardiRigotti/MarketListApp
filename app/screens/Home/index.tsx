@@ -33,7 +33,7 @@ export default function Home({ navigation }) {
         <Container>
             <Image source={images.logo} style={{ width: 200, height: 300, resizeMode: "center", marginBottom: 30 }} />
             <Label>Comece sua primeira lista de compras</Label>
-            <Button onPress={handleNavigation}>
+            <Button testID="click-me-button" onPress={handleNavigation}>
                 <ButtonText>
                     Vamos lá
                 </ButtonText>
